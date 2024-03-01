@@ -9,6 +9,8 @@
 	system = "x86_64-linux";
 	pkgs = nixpkgs.legacyPackages.${system};
   in {
-	
+	devShells.x86_64-linux.default = pkgs.mkShell {
+		buildInputs = [ pkgs.python311 pkgs.jq ];
+        };
   };
 }
